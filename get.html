@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Get Sumurai</title>
+<meta name="description" content="Can you beat me? Get Sumurai, the mental maths game, free.">
+<meta property="og:title" content="Can you beat me on Sumurai?">
+<meta property="og:description" content="Get quicker at mental maths with tricks, 120 levels and daily challenges. Free.">
+<link rel="icon" href="mark.svg"><link rel="stylesheet" href="style.css">
+</head>
+<body><main>
+<header><img src="mark.svg" alt=""><a href="./">Sumurai</a></header>
+<h1 id="title">Can you beat your friend?</h1>
+<p class="soft">Sumurai is a free mental-maths game: learn quick tricks, climb 120 levels and earn your black belt.</p>
+<div class="btns">
+  <a class="btn" id="play" href="#">Get it on Google Play</a>
+  <a class="btn secondary" id="ios" href="#">Download on the App Store</a>
+</div>
+<p class="soft" id="code"></p>
+<footer><a href="privacy.html">Privacy policy</a></footer>
+</main>
+<script>
+// Share landing page. Links look like get.html?ref=K7Q2XM&m=level
+// Android goes to Play with the referrer kept, so installs per invite code show up in the Play Console.
+// iPhone goes to the App Store once APP_STORE_ID is set; until then both buttons stay visible.
+(function () {
+  var PLAY_ID = "com.sumurai.app";
+  var APP_STORE_ID = ""; // set after the App Store Connect record exists, e.g. "6740000000"
+  var q = new URLSearchParams(location.search);
+  var ref = (q.get("ref") || "").replace(/[^A-Z0-9]/gi, "").slice(0, 12).toUpperCase();
+  var medium = (q.get("m") || "share").replace(/[^a-z_]/gi, "").slice(0, 24);
+  var referrer = "utm_source=share&utm_medium=" + medium + (ref ? "&utm_campaign=ref_" + ref : "");
+  var play = "https://play.google.com/store/apps/details?id=" + PLAY_ID + "&referrer=" + encodeURIComponent(referrer);
+  var ios = APP_STORE_ID ? "https://apps.apple.com/app/id" + APP_STORE_ID + "?pt=&ct=" + encodeURIComponent(ref ? "ref_" + ref : "share") : "";
+  document.getElementById("play").href = play;
+  var iosBtn = document.getElementById("ios");
+  if (ios) iosBtn.href = ios; else iosBtn.hidden = true;
+  if (ref) document.getElementById("code").textContent = "Invite code " + ref;
+  var ua = navigator.userAgent || "";
+  if (/android/i.test(ua)) location.replace(play);
+  else if (ios && /iphone|ipad|ipod/i.test(ua)) location.replace(ios);
+})();
+</script>
+</body>
+</html>
