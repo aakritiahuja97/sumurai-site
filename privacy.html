@@ -3,45 +3,91 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Sumurai Privacy Policy</title>
+<meta name="description" content="What the Sumurai mental-maths game stores, what it sends, and your choices.">
 <link rel="icon" href="mark.svg"><link rel="stylesheet" href="style.css">
+<style>
+  .sum { margin:20px 0 8px; padding:20px 22px; }
+  .sum ul { margin:0; padding-left:20px; }
+  .sum li { margin:4px 0; }
+  table { width:100%; border-collapse:collapse; margin:12px 0; font-size:15px; }
+  th, td { text-align:left; vertical-align:top; padding:10px 8px; border-bottom:1px solid var(--line); }
+  th { font-weight:700; }
+  @media (max-width: 520px) { table, tbody, tr, td, th, thead { display:block; } thead { display:none; }
+    tr { padding:8px 0; border-bottom:1px solid var(--line); } td { border:0; padding:2px 0; } td:first-child { font-weight:700; } }
+</style>
 </head>
 <body><main>
 <header><img src="mark.svg" alt=""><a href="./">Sumurai</a></header>
 <h1>Privacy policy</h1>
-<p class="soft">Last updated: 14 November 2026</p>
+<p class="soft">Last updated: 17 November 2026</p>
 
-<p>Sumurai ("the app") is a mental-maths game made by Aakriti Ahuja. This policy explains what information the app uses and why. In short: there are no accounts and no ads, your progress stays on your phone, and we use anonymous analytics to understand how the app is used so we can improve it.</p>
+<p>Sumurai ("the app") is a mental-maths game made by Aakriti Ahuja ("we", "us"). This policy explains what the app stores, what it sends, and the choices you have. It applies to the Sumurai apps for iPhone and Android.</p>
 
-<h2>What stays on your phone</h2>
-<p>Your game progress (levels, stars, scores, streaks, settings and your invite code) is stored only on your device. We can't see it, and it's deleted if you uninstall the app.</p>
+<div class="card sum">
+<ul>
+  <li>No accounts, no sign-in, no ads, no in-app purchases.</li>
+  <li>Your progress and your first name stay on your phone, with a backup in <em>your own</em> iCloud or Google account so you don't lose them. We can't see either.</li>
+  <li>We use Google Analytics for Firebase to count, anonymously, how the app is used, so we can make it better. No name, email or advertising ID is sent, and we don't track you across other apps.</li>
+  <li>We never sell your data.</li>
+</ul>
+</div>
+
+<h2>What the app keeps on your phone</h2>
+<p>Everything you do in Sumurai is saved on your device:</p>
+<ul>
+  <li><strong>Your progress:</strong> levels and stars, scores, brain speed and belt, tricks learned, your streak and the days you played.</li>
+  <li><strong>Your first name</strong>, if you type one when you start. It's only used to greet you inside the app.</li>
+  <li><strong>Your settings:</strong> sound, vibration, daily goal and reminder time.</li>
+  <li><strong>An invite code</strong>: a short random code (for example K7Q2XM) that the app adds to links when you share a result. It isn't linked to who you are.</li>
+</ul>
+<p>We don't receive any of this. It's never sent to us or to analytics.</p>
+
+<h2>Backup to your own iCloud or Google account</h2>
+<p>So that a new phone or a reinstall doesn't wipe your progress, the app lets your phone back it up to your own account:</p>
+<ul>
+  <li><strong>iPhone:</strong> your progress, name and settings are saved to your iCloud using Apple's iCloud key-value storage, if you're signed in to iCloud. When you reinstall the app or use a new iPhone with the same Apple Account, they come back automatically.</li>
+  <li><strong>Android:</strong> your progress, name and settings are included in your phone's Google backup (Android Auto Backup), if backup is turned on. They come back when you reinstall or set up a new phone with the same Google account.</li>
+</ul>
+<p>These backups are stored by Apple or Google in your account, under their privacy policies. We can't access them. You can turn them off in your phone's iCloud or backup settings.</p>
+
+<h2>Daily reminders</h2>
+<p>If you turn on the daily reminder, the app asks your permission to show notifications. Reminders are scheduled on your phone; no server is involved and no data is sent when they appear. You can turn reminders off in the app's Settings or in your phone's notification settings.</p>
 
 <h2>Analytics</h2>
-<p>We use Google Firebase Analytics to see, in aggregate, how people use Sumurai, for example which levels are completed and which game modes are played. Firebase collects:</p>
-<ul>
-  <li>events about how you use the app, such as starting a level or sharing a result</li>
-  <li>an app-instance identifier created by Firebase, which isn't linked to your name or contact details</li>
-  <li>basic device information (model, OS version, language) and an approximate location at the country or region level, which Firebase derives from your IP address</li>
-</ul>
-<p>We don't collect your name, email, phone number, contacts, photos or precise location. We don't use the advertising ID and we don't track you across other apps or websites. We don't sell your data or share it with anyone other than Google as our analytics provider. Google processes this data under its own privacy terms: <a href="https://policies.google.com/privacy">policies.google.com/privacy</a> and <a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a>.</p>
-<p>Analytics data is kept for up to 14 months and then deleted automatically.</p>
+<p>We use Google Analytics for Firebase to understand, in total across all players, how Sumurai is used: for example which levels are hard, which game modes are popular and whether the tour helps. Firebase collects:</p>
+<table>
+  <thead><tr><th>What</th><th>Examples</th></tr></thead>
+  <tbody>
+    <tr><td>App events</td><td>opening the app, starting or finishing a level (with its number, stars and time), finishing the tour, changing a setting (which setting, not your name), tapping Share</td></tr>
+    <tr><td>Simple player traits</td><td>which path you're on, your belt, a streak range such as "3–6 days", your daily goal and whether reminders are on</td></tr>
+    <tr><td>An app-instance ID</td><td>a random identifier created by Firebase for this install. It isn't linked to your name, email or phone number, and it changes if you reinstall the app.</td></tr>
+    <tr><td>Device information</td><td>phone model, operating system version, language and app version</td></tr>
+    <tr><td>Approximate location</td><td>country, region or city, which Google works out from your internet connection's IP address. The app never asks for or uses GPS.</td></tr>
+  </tbody>
+</table>
+<p>We don't collect your name, email, phone number, contacts, photos or precise location. The app doesn't use the advertising ID (IDFA on iPhone, AAID on Android), doesn't show ads and doesn't track you across other companies' apps or websites. On iPhone, Apple's App Privacy section for Sumurai lists the same data: device ID, product interaction and coarse location, used for analytics only, not linked to you and not used for tracking.</p>
+<p>Google processes this data for us as our analytics provider, under its terms: <a href="https://policies.google.com/privacy">policies.google.com/privacy</a> and <a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a>. Analytics data is kept for no longer than 14 months and is then deleted automatically. All data is sent over encrypted connections (HTTPS).</p>
 
 <h2>Sharing</h2>
-<p>When you choose to share an achievement, the app creates an image and message on your phone and hands them to the app you pick, such as WhatsApp, through your phone's share menu. We don't see what you share or who you share it with. Shared links include your anonymous invite code so we can count how many people joined through shares.</p>
+<p>When you choose to share a result or your streak, the app makes a picture and a short message on your phone and hands them to the app you pick (WhatsApp, Messages and so on) through your phone's share menu. We don't see what you share or who you share it with. The link in the message, and the picture, include your anonymous invite code, so we can count how many people joined through shares.</p>
 
 <h2>Children</h2>
-<p>Sumurai is intended for users aged 13 and over and isn't directed at children under 13.</p>
+<p>Sumurai is a general-audience app designed for teens and adults, and it isn't directed at children under 13. It has no accounts, chat, ads or purchases, and it doesn't knowingly collect personal information from children. If you're a parent or guardian and think your child has sent us personal information, email us and we'll delete it.</p>
 
-<h2>Your choices</h2>
+<h2>Your choices and rights</h2>
 <ul>
-  <li>You can stop all analytics by uninstalling the app. Reinstalling creates a new, unrelated identifier.</li>
-  <li>To ask us to delete analytics data linked to your app instance, email us with the date you installed the app and your invite code (shown on the Progress screen).</li>
+  <li><strong>Erase your progress:</strong> in the app, open Settings and choose <em>Reset progress</em>. This clears it on your phone and replaces the copy in your iCloud (on iPhone). Deleting the app also removes everything stored on the phone.</li>
+  <li><strong>Turn off backup:</strong> switch off iCloud or Google backup for the app in your phone's settings.</li>
+  <li><strong>Stop analytics:</strong> uninstall the app. Reinstalling creates a new, unrelated app-instance ID.</li>
+  <li><strong>Ask us to delete analytics data:</strong> email us with your invite code (it's printed at the bottom of any result picture you've shared) or the approximate date you installed the app, and we'll ask Google to delete the matching data.</li>
 </ul>
+<p>Depending on where you live, you may have rights to access, correct or delete personal data and to complain to a data protection authority. Because we don't hold your name or contact details, the steps above cover these rights; email us if you need anything else.</p>
 
 <h2>Changes</h2>
-<p>If this policy changes, we'll update this page and the date above.</p>
+<p>If this policy changes, we'll update this page and the date at the top. If a change is significant, we'll also mention it in the app's update notes.</p>
 
 <h2>Contact</h2>
-<p>Email <a href="mailto:work.aakriti@gmail.com">work.aakriti@gmail.com</a>.</p>
-<footer>© 2026 Aakriti Ahuja</footer>
+<p>Aakriti Ahuja, the developer of Sumurai: <a href="mailto:work.aakriti@gmail.com">work.aakriti@gmail.com</a>.</p>
+<footer>© 2026 Aakriti Ahuja · <a href="./">Sumurai</a></footer>
 </main></body>
 </html>
