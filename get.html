@@ -22,23 +22,32 @@
 <script>
 // Share landing page. Links look like get.html?ref=K7Q2XM&m=level
 // Android goes to Play with the referrer kept, so installs per invite code show up in the Play Console.
-// iPhone goes to the App Store once APP_STORE_ID is set; until then both buttons stay visible.
+// iPhone goes to the App Store (campaign ct=ref_<CODE> shows in App Store Connect analytics).
+// Until a store goes live its button reads "Coming soon" and nobody is sent to a "not found" page.
+// Launch day: set IOS_LIVE / PLAY_LIVE to true. No app update is needed.
 (function () {
   var PLAY_ID = "com.sumurai.app";
-  var APP_STORE_ID = ""; // set after the App Store Connect record exists, e.g. "6740000000"
+  var APP_STORE_ID = "6835748096"; // Apple ID of the Sumurai app record in App Store Connect
+  var IOS_LIVE = false;
+  var PLAY_LIVE = false;
   var q = new URLSearchParams(location.search);
   var ref = (q.get("ref") || "").replace(/[^A-Z0-9]/gi, "").slice(0, 12).toUpperCase();
   var medium = (q.get("m") || "share").replace(/[^a-z_]/gi, "").slice(0, 24);
   var referrer = "utm_source=share&utm_medium=" + medium + (ref ? "&utm_campaign=ref_" + ref : "");
   var play = "https://play.google.com/store/apps/details?id=" + PLAY_ID + "&referrer=" + encodeURIComponent(referrer);
-  var ios = APP_STORE_ID ? "https://apps.apple.com/app/id" + APP_STORE_ID + "?pt=&ct=" + encodeURIComponent(ref ? "ref_" + ref : "share") : "";
-  document.getElementById("play").href = play;
-  var iosBtn = document.getElementById("ios");
-  if (ios) iosBtn.href = ios; else iosBtn.hidden = true;
+  var ios = "https://apps.apple.com/app/id" + APP_STORE_ID + "?ct=" + encodeURIComponent(ref ? "ref_" + ref : "share") + "&mt=8";
+  function setup(id, url, live, soonText) {
+    var b = document.getElementById(id);
+    if (live) { b.href = url; return; }
+    b.removeAttribute("href"); b.textContent = soonText; b.setAttribute("aria-disabled", "true");
+    b.style.opacity = "0.55"; b.style.pointerEvents = "none";
+  }
+  setup("play", play, PLAY_LIVE, "Coming soon to Google Play");
+  setup("ios", ios, IOS_LIVE, "Coming soon to the App Store");
   if (ref) document.getElementById("code").textContent = "Invite code " + ref;
   var ua = navigator.userAgent || "";
-  if (/android/i.test(ua)) location.replace(play);
-  else if (ios && /iphone|ipad|ipod/i.test(ua)) location.replace(ios);
+  if (PLAY_LIVE && /android/i.test(ua)) location.replace(play);
+  else if (IOS_LIVE && /iphone|ipad|ipod/i.test(ua)) location.replace(ios);
 })();
 </script>
 </body>
